@@ -1,0 +1,23 @@
+{
+  "name": "prisma",
+  "version": "1.0.0",
+  "description": "Una pequeña introducción a la ORM Prisma",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlejoCx2/Prisma.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlejoCx2/Prisma/issues"
+  },
+  "homepage": "https://github.com/AlejoCx2/Prisma#readme",
+  "devDependencies": {
+    "prisma": "^3.13.0"
+  }
+}
