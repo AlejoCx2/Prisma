@@ -9,3 +9,31 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model user {
+  id               Int       @id @default(autoincrement())
+  usernaname       String    @db.VarChar
+  password         String    @db.VarChar()
+  personal_data personal_data?
+  projects projects[]
+}
+
+model personal_data{
+  id                Int      @id @default(autoincrement())
+  user_id           Int      @unique
+  identification    String   @db.VarChar
+  name              String   @db.VarChar
+  lastname          String   @db.VarChar
+  mail              String   @db.VarChar
+  phone             String   @db.VarChar
+  user user @relation(fields: [user_id], references: [id])
+}
+
+model projects{
+  id                Int      @id @default(autoincrement())
+  leader_id         Int
+  name              String   @db.VarChar
+  description       String   @db.VarChar
+  start_date        DateTime @db.Date
+  user user @relation(fields: [leader_id], references: [id])
+}
