@@ -46,6 +46,23 @@ const create = async () => {
   });
   console.log(proyects); */
 
+  /* const userAnidado = await prisma.user.create({
+    data: {
+      usernaname: "Carlos",
+      password: "secret",
+      personal_data: {
+        create: {
+          identification: "16614670",
+          name: "Carlos",
+          lastname: "Tovar",
+          mail: "calrostovar@hotmail.com",
+          phone: "313131313131",
+        },
+      },
+    },
+  });
+  console.log(userAnidado); */
+
   const userAnidado = await prisma.user.create({
     data: {
       usernaname: "Angel",

@@ -21,7 +21,7 @@ const read = async () => {
   });
   console.log(datosPersonales); */
 
-  /* const usuarp = await prisma.user.findMany({
+  const usuarp = await prisma.user.findMany({
     where: {
       usernaname: {
         startsWith: "A",
@@ -35,7 +35,7 @@ const read = async () => {
       },
     },
   });
-  console.log(usuarp); */
+  console.log(usuarp);
 };
 
 read()
