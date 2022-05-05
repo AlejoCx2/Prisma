@@ -22,7 +22,7 @@ const create = async () => {
   });
   console.log(p_data); */
 
-  const proyects = await prisma.projects.createMany({
+  /* const proyects = await prisma.projects.createMany({
     data: [
       {
         name: "Proyecto_1",
@@ -44,8 +44,41 @@ const create = async () => {
       },
     ],
   });
-  console.log(proyects);
+  console.log(proyects); */
+
+  const userAnidado = await prisma.user.create({
+    data: {
+      usernaname: "Angel",
+      password: "notsecretpass",
+      personal_data: {
+        create: {
+          identification: "31896359",
+          name: "Juan Jose",
+          lastname: "Angel",
+          mail: "jjangel@outlook.com",
+          phone: "315151515151",
+        },
+      },
+      projects: {
+        create: [
+          {
+            name: "Proyecto_4",
+            description: "Descripcion 4",
+            start_date: new Date("5/5/2022"),
+          },
+          {
+            name: "Proyecto_5",
+            description: "Descripcion 5",
+            start_date: new Date("6/6/2022"),
+          },
+        ],
+      },
+    },
+  });
+  console.log(userAnidado);
 };
+
+
 
 create()
   .catch((e) => {
